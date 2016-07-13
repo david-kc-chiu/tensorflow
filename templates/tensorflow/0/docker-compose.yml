@@ -19,6 +19,8 @@ tensorflow-jupyter:
   net: host
   volume_driver: convoy-gluster
 worker:
+	ports:
+  - 32222:22/tcp
   labels:
     io.rancher.container.pull_image: always
     io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
@@ -34,6 +36,8 @@ worker:
   net: host
   volume_driver: convoy-gluster
 ps:
+  ports:
+	- 33222:22/tcp
   labels:
     io.rancher.container.pull_image: always
   tty: true
