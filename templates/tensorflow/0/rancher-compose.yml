@@ -1,3 +1,17 @@
+.catalog:
+  name: Tensorflow
+  version: V0.9
+  description: |
+    Tensorflow with GPU support
+  uuid: tensorflow-0
+  questions:
+    - variable: "exo-scale"
+      description: "Number of exosphere nodes."
+      label: "Number of Workers:"
+      required: true
+      default: 1
+      type: "int"
+
 tensorflow-jupyter:
   scale: 1
 worker:
