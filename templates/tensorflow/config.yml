@@ -1,5 +1,5 @@
-name: fxndl
+name: Tensorflow
 description: |
-  FOXCONN DEEP LEARNING
+  FOXCONN TENSORFLOW
 version: v0.1
 category: deeplearning
