@@ -19,7 +19,7 @@ tensorflow-jupyter:
   net: host
   volume_driver: convoy-gluster
 worker:
-	ports:
+  ports:
   - 32222:22/tcp
   labels:
     io.rancher.container.pull_image: always
@@ -37,7 +37,7 @@ worker:
   volume_driver: convoy-gluster
 ps:
   ports:
-	- 33222:22/tcp
+  - 33222:22/tcp
   labels:
     io.rancher.container.pull_image: always
   tty: true
