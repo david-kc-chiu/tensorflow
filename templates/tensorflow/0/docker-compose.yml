@@ -1,0 +1,45 @@
+tensorflow-jupyter:
+  ports:
+  - 8888:8888/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  entrypoint:
+  - /bin/sh
+  - -c
+  - jupyter notebook --port=8888 --ip=0.0.0.0
+  image: davidchiu/tensorflow09:latest
+  hostname: tf_master
+  volumes:
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+  - tensorflow:/root/notebook
+  privileged: true
+  working_dir: /root/notebook
+  stdin_open: true
+  volume_driver: convoy-gluster
+worker:
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  hostname: worker
+  image: davidchiu/tensorflow09:latest
+  privileged: true
+  volumes:
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+  - tensorflow:/root/notebook
+  working_dir: /root/notebook
+  stdin_open: true
+  volume_driver: convoy-gluster
+ps:
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  hostname: tf_ps
+  image: davidchiu/tensorflow09:latest
+  privileged: true
+  volumes:
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+  - tensorflow:/root/notebook
+  working_dir: /root/notebook
+  stdin_open: true
+  volume_driver: convoy-gluster

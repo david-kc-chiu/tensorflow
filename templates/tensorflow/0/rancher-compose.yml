@@ -1,0 +1,6 @@
+tensorflow-jupyter:
+  scale: 1
+worker:
+  scale: 3
+ps:
+  scale: 1
