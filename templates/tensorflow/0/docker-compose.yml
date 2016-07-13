@@ -20,6 +20,7 @@ tensorflow-jupyter:
 worker:
   labels:
     io.rancher.container.pull_image: always
+    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
   tty: true
   hostname: worker
   image: davidchiu/tensorflow09:latest
