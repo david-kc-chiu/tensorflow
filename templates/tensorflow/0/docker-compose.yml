@@ -8,19 +8,18 @@ tensorflow-jupyter:
   - /bin/sh
   - -c
   - jupyter notebook --port=8888 --ip=0.0.0.0
-  image: davidchiu/tensorflow09:latest
   hostname: tf_jupyter
+  image: davidchiu/tensorflow09:latest
+  privileged: true
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
   - tensorflow:/root/notebook
-  privileged: true
   working_dir: /root/notebook
   stdin_open: true
-  net: host
   volume_driver: convoy-gluster
 worker:
   ports:
-  - 32222:22/tcp
+  - 32222:2222/tcp
   labels:
     io.rancher.container.pull_image: always
     io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
@@ -33,11 +32,10 @@ worker:
   - tensorflow:/root/notebook
   working_dir: /root/notebook
   stdin_open: true
-  net: host
   volume_driver: convoy-gluster
 ps:
   ports:
-  - 33222:22/tcp
+  - 33222:2222/tcp
   labels:
     io.rancher.container.pull_image: always
   tty: true
@@ -49,5 +47,4 @@ ps:
   - tensorflow:/root/notebook
   working_dir: /root/notebook
   stdin_open: true
-  net: host
   volume_driver: convoy-gluster
