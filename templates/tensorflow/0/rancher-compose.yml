@@ -11,18 +11,18 @@
       required: true
       default: 2
       type: "int"
-   - variable: "CONVOY_SERVICE"
-       label: "Convoy Gluster Service"
-       type: "service"
-       required: true
-       description: Service that is running GlusterFS
-   - variable: "CONVOY_VOL"
+    - variable: "CONVOY_SERVICE"
+      label: "Convoy Gluster Service"
+      type: "service"
+      required: true
+      description: Service that is running GlusterFS
+    - variable: "CONVOY_VOL"
       description: "Convoy gluster volume name"
       label: "Volume name:"
       required: true
       default: tf_vol
       type: "string"
-   - variable: "MOUNT_PATH"
+    - variable: "MOUNT_PATH"
       description: "Mount path"
       label: "Path:"
       required: true

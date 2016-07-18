@@ -13,10 +13,10 @@ tensorflow-jupyter:
   privileged: true
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
-  - ${CONVOY_VOL}:${MOUNT_PATH}
-  working_dir: ${MOUNT_PATH}
+  - "${CONVOY_VOL}:${MOUNT_PATH}"
+  working_dir: "${MOUNT_PATH}"
   stdin_open: true
-  volume_driver: ${CONVOY_SERVICE}
+  volume_driver: "${CONVOY_SERVICE}"
 worker:
   ports:
   - 32222:2222/tcp
@@ -29,10 +29,10 @@ worker:
   privileged: true
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
-  - ${CONVOY_VOL}:${MOUNT_PATH}
-  working_dir: ${MOUNT_PATH}
+  - "${CONVOY_VOL}:${MOUNT_PATH}"
+  working_dir: "${MOUNT_PATH}"
   stdin_open: true
-  volume_driver: ${CONVOY_SERVICE}
+  volume_driver: "${CONVOY_SERVICE}"
 ps:
   ports:
   - 33222:2222/tcp
@@ -44,7 +44,7 @@ ps:
   privileged: true
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
-  - ${CONVOY_VOL}:${MOUNT_PATH}
-  working_dir: ${MOUNT_PATH}
+  - "${CONVOY_VOL}:${MOUNT_PATH}"
+  working_dir: "${MOUNT_PATH}"
   stdin_open: true
-  volume_driver: ${CONVOY_SERVICE}
+  volume_driver: "${CONVOY_SERVICE}"
