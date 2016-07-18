@@ -5,7 +5,7 @@
     Tensorflow with GPU support
   uuid: tensorflow-0
   questions:
-    - variable: "Corker_count"
+    - variable: "WORKER_COUNT"
       description: "Number of execute worker."
       label: "Number of Workers:"
       required: true
@@ -14,6 +14,7 @@
     - variable: "CONVOY_SERVICE"
       label: "Convoy Gluster Service"
       type: "service"
+      default: "convoy-gluster"
       required: true
       description: Service that is running GlusterFS
     - variable: "CONVOY_VOL"
@@ -31,6 +32,6 @@
 tensorflow-jupyter:
   scale: 1
 worker:
-  scale: ${worker_count}
+  scale: ${WORKER_COUNT}
 ps:
   scale: 1
