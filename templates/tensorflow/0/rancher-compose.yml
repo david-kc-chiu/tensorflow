@@ -13,7 +13,7 @@
       type: "int"
     - variable: "CONVOY_SERVICE"
       label: "Convoy Gluster Service"
-      type: "service"
+      type: "string"
       default: "convoy-gluster"
       required: true
       description: Service that is running GlusterFS
