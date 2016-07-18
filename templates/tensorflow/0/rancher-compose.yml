@@ -5,12 +5,29 @@
     Tensorflow with GPU support
   uuid: tensorflow-0
   questions:
-    - variable: "worker_count"
+    - variable: "Corker_count"
       description: "Number of execute worker."
       label: "Number of Workers:"
       required: true
       default: 2
       type: "int"
+   - variable: "CONVOY_SERVICE"
+       label: "Convoy Gluster Service"
+       type: "service"
+       required: true
+       description: Service that is running GlusterFS
+   - variable: "CONVOY_VOL"
+      description: "Convoy gluster volume name"
+      label: "Volume name:"
+      required: true
+      default: tf_vol
+      type: "string"
+   - variable: "MOUNT_PATH"
+      description: "Mount path"
+      label: "Path:"
+      required: true
+      default: /root/notebook
+      type: "string"
 tensorflow-jupyter:
   scale: 1
 worker:
