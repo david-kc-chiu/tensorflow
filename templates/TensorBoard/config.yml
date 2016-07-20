@@ -1,4 +1,4 @@
-name: Tensorbpard
+name: Tensorboard
 description: |
   TENSORBOARD
 version: tensorflow V0.9
