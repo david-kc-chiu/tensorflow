@@ -1,5 +1,5 @@
-name: Tensorflow
+name: Tensorbpard
 description: |
-  TENSORFLOW
+  TENSORBOARD
 version: tensorflow V0.9
 category: deeplearning
