@@ -5,6 +5,12 @@
     TensorBoard
   uuid: tensorboard-0
   questions:
+  	- variable: "PUBLIC_PORT"
+      label: "Port number"
+      type: "int"
+      default: 6006
+      required: false
+      description: Service that is running GlusterFS
     - variable: "CONVOY_SERVICE"
       label: "Convoy Gluster Service"
       type: "string"
@@ -15,7 +21,13 @@
       description: "Convoy gluster volume name"
       label: "Volume name:"
       required: true
-      default: tf_vol
+      default: tf_gpu
+      type: "string"
+    - variable: "MOUNT_PATH"
+      description: "Convoy gluster mount path"
+      label: "Mount path:"
+      required: true
+      default: /notebooks
       type: "string"
     - variable: "LOG_DIR"
       description: "log dir"
