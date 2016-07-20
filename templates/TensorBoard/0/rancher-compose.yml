@@ -5,7 +5,7 @@
     TensorBoard
   uuid: tensorboard-0
   questions:
-  	- variable: "PUBLIC_PORT"
+    - variable: "PUBLIC_PORT"
       label: "Port number"
       type: "int"
       default: 6006
