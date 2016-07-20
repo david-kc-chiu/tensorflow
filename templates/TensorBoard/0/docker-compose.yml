@@ -15,4 +15,4 @@ tensorboard:
   - ${CONVOY_VOL}:${MOUNT_PATH}
   working_dir: ${MOUNT_PATH}
   stdin_open: true
-  volume_driver: ${convoy-gluster}
+  volume_driver: ${CONVOY_SERVICE}
