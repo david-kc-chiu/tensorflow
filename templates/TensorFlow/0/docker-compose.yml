@@ -1,0 +1,13 @@
+tensorflow:
+  ports:
+  - ${PUBLIC_PORT}:8888/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  image: gcr.io/tensorflow/tensorflow
+  privileged: true
+  volumes:
+  - ${CONVOY_VOL}:${MOUNT_PATH}
+  working_dir: ${MOUNT_PATH}
+  stdin_open: true
+  volume_driver: ${CONVOY_SERVICE}
