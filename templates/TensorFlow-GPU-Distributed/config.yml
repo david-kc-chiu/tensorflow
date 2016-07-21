@@ -1,5 +1,6 @@
-name: Tensorflow-GPU
+name: Tensorflow-Dist
 description: |
   FOXCONN TENSORFLOW-GPU
+       DISTRIBUTED
 version: tensorflow V0.9
 category: deeplearning

@@ -1,10 +1,16 @@
 .catalog:
-  name: TensorFlow-GPU
+  name: TensorFlow-GPU-DIST
   version: v0.9
   description: |
-    TensorFlow-GPU
-  uuid: tensorflow-0
+    TensorFlow-GPU Distributed
+  uuid: tensorflow-gpu-dist-0
   questions:
+    - variable: "WORKER_NUM"
+      label: "worker number"
+      type: "int"
+      default: 6
+      required: true
+      description: worker number setting
     - variable: "PUBLIC_PORT"
       label: "Port number"
       type: "int"
@@ -29,5 +35,9 @@
       required: true
       default: /notebooks
       type: "string"
-tensorflow-gpu:
+tf-jupyter:
+  scale: 1
+tf-worker:
+  scale: ${WORKER_NUM}
+tf-ps:
   scale: 1
