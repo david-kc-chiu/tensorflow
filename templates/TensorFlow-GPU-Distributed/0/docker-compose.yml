@@ -21,7 +21,7 @@ tf-worker:
   labels:
     io.rancher.container.pull_image: always
   tty: true
-  hostname: tf-worker
+  hostname: tf_worker
   image: davidchiu/tensorflow09:latest
   privileged: true
   volumes:
@@ -42,4 +42,4 @@ tf-ps:
   - ${CONVOY_VOL}:${MOUNT_PATH}
   working_dir: ${MOUNT_PATH}
   stdin_open: true
-  volume_driver: c${CONVOY_SERVICE}
+  volume_driver: ${CONVOY_SERVICE}
