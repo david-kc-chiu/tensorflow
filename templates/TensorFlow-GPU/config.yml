@@ -1,5 +1,5 @@
 name: Tensorflow
 description: |
-  FOXCONN TENSORFLOW WITH GPU
+  FOXCONN TENSORFLOW-GPU
 version: tensorflow V0.9
 category: deeplearning

@@ -1,6 +1,6 @@
 tensorflow-gpu:
   ports:
-  - 8888:8888/tcp
+  - ${PUBLIC_PORT}:8888/tcp
   labels:
     io.rancher.container.pull_image: always
   tty: true
@@ -8,5 +8,6 @@ tensorflow-gpu:
   privileged: true
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
-  working_dir: /notebooks
+  working_dir: ${MOUNT_PATH}
   stdin_open: true
+  volume_driver: ${CONVOY_SERVICE}
