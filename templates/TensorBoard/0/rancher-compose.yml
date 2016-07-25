@@ -33,7 +33,7 @@
       description: "log dir"
       label: "Path:"
       required: true
-      default: /notebooks/log_dir
+      default: /notebooks/logdir
       type: "string"
 tensorboard:
   scale: 1

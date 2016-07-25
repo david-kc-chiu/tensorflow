@@ -9,7 +9,7 @@ tf-jupyter:
   - -c
   - jupyter notebook --port=8888 --ip=0.0.0.0
   image: davidchiu/tensorflow09:gpu-jupyter
-  hostname: tf_master
+  hostname: tf_jupyter
   privileged: true
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
