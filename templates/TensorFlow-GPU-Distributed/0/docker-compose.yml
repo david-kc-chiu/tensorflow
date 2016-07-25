@@ -1,5 +1,5 @@
 tf-jupyter:
-	environment:
+  environment:
     stack_name: ${stack_name}
     service_name: ${service_name}
   ports:
@@ -21,7 +21,7 @@ tf-jupyter:
   stdin_open: true
   volume_driver: ${CONVOY_SERVICE}
 tf-worker:
-	environment:
+  environment:
     stack_name: ${stack_name}
     service_name: ${service_name}
   labels:
@@ -38,7 +38,7 @@ tf-worker:
   stdin_open: true
   volume_driver: ${CONVOY_SERVICE}
 tf-ps:
-	environment:
+  environment:
     stack_name: ${stack_name}
     service_name: ${service_name}
   labels:
