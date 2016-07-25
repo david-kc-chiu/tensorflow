@@ -1,7 +1,7 @@
 tf-jupyter:
   environment:
-    stack_name: $${stack_name}
-    service_name: $${service_name}
+    stack_name: ${stack_name}
+    service_name: ${service_name}
   ports:
   - ${PUBLIC_PORT}:8888/tcp
   labels:
@@ -22,8 +22,8 @@ tf-jupyter:
   volume_driver: ${CONVOY_SERVICE}
 tf-worker:
   environment:
-    stack_name: $${stack_name}
-    service_name: $${service_name}
+    stack_name: ${stack_name}
+    service_name: ${service_name}
   labels:
     io.rancher.container.pull_image: always
     io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
@@ -39,8 +39,8 @@ tf-worker:
   volume_driver: ${CONVOY_SERVICE}
 tf-ps:
   environment:
-    stack_name: $${stack_name}
-    service_name: $${service_name}
+    stack_name: ${stack_name}
+    service_name: ${service_name}
   labels:
     io.rancher.container.pull_image: always
   tty: true
