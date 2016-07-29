@@ -1,4 +1,4 @@
-tensorflow-gpu:
+tensorflow:
   ports:
   - ${PUBLIC_PORT}:8888/tcp
   labels:
@@ -12,7 +12,7 @@ tensorflow-gpu:
   privileged: true
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
-  - ${CONVOY_VOL}:${MOUNT_PATH}
-  working_dir: ${MOUNT_PATH}
+  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
+  working_dir: /notebooks
   stdin_open: true
-  volume_driver: ${CONVOY_SERVICE}
+  volume_driver: ${VOLUME_DRIVER}

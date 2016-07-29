@@ -4,10 +4,14 @@ tensorflow:
   labels:
     io.rancher.container.pull_image: always
   tty: true
-  image: gcr.io/tensorflow/tensorflow
+  entrypoint:
+  - /bin/sh
+  - -c
+  - jupyter notebook --port=8888 --ip=0.0.0.0
+  image: davidchiu/tensorflow09:cpu-jupyter
   privileged: true
   volumes:
-  - ${CONVOY_VOL}:${MOUNT_PATH}
-  working_dir: ${MOUNT_PATH}
+  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
+  working_dir: /notebooks
   stdin_open: true
-  volume_driver: ${CONVOY_SERVICE}
+  volume_driver: ${VOLUME_DRIVER}
