@@ -16,18 +16,18 @@
       type: "int"
       default: 8888
       required: false
-      description: Service that is running GlusterFS
+      description: jupyter-notebooks public port
     - variable: "CONVOY_SERVICE"
-      label: "Convoy Gluster Service"
+      label: "Convoy NFS Service"
       type: "string"
-      default: "convoy-gluster"
+      default: "convoy-nfs"
       required: true
-      description: Service that is running GlusterFS
+      description: Service that is running convoy-nfs
     - variable: "CONVOY_VOL"
-      description: "Convoy gluster volume name"
+      description: "Convoy nfs volume name"
       label: "Volume name:"
       required: true
-      default: tf_gpu
+      default: tensorflow_volume_gpu
       type: "string"
     - variable: "MOUNT_PATH"
       description: "Convoy gluster mount path"
