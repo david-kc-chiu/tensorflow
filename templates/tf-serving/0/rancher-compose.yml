@@ -1,0 +1,11 @@
+.catalog:
+  name: "Mnist Classification"
+  version: Latest (Mnist)
+  description: "Deep Learning"
+  questions:
+     - variable: "PUBLIC_PORT"
+       label: "Public Port"
+       type: "int"
+       required: true
+       description: Public port to access the web site
+       default: 9000

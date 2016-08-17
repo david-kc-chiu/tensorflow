@@ -1,0 +1,5 @@
+name: Tensorflow Serving
+description: |
+  Deep Learning Framework
+version: Latest (ImageNet)
+category: Deep Learning
