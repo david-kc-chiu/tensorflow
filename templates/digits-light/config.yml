@@ -1,0 +1,5 @@
+name: NVIDIA DIGITS
+description: |
+  NVIDIA Deep Learning Platform
+version: DDIGITS 4.0 (CPU only)
+category: Deep Learning
